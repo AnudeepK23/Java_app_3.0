@@ -21,6 +21,12 @@
         <java.version>1.8</java.version>
     </properties>
 
+         <properties>
+    <maven.compiler.source>11</maven.compiler.source> <!-- or your JDK version -->
+    <maven.compiler.target>11</maven.compiler.target> <!-- or your JDK version -->
+</properties>
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -58,7 +64,7 @@
         </dependency>
     </dependencies>
 
-    <build>
+ <--   <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -74,7 +80,22 @@
               </configuration>
           </plugin>
         </plugins>
-    </build>
+    </build> -->
+
+         <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.9.8</version> <!-- Try a more recent version -->
+            <configuration>
+                <source>11</source> <!-- or your source version -->
+                <target>11</target> <!-- or your target version -->
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 
 
 </project>
